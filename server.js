@@ -11,14 +11,14 @@ conn();const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename);
 
 const app=express();
-
-
-app.use(express.static(path.join(__dirname,'./client/build')))
 app.use(cors({
     origin:"http://localhost:3000",
     methods:["GET","POST","PUT","DELETE"],
   }))
   app.use(express.json());
+
+app.use(express.static(path.join(__dirname,'./client/build')))
+
 
 
 
